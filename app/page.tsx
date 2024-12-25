@@ -7,7 +7,7 @@ import SignOutButton from "@/components/auth/signout-button";
 import { SVGProps } from "react";
 
 export default async function Home() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getUser();
 

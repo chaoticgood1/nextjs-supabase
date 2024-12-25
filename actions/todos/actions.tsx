@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { Todo } from "@/lib/interface";
 
 export async function addTodo(formData: FormData) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -31,7 +31,7 @@ export async function addTodo(formData: FormData) {
 }
 
 export async function editTodo(todo: Todo) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -50,7 +50,7 @@ export async function editTodo(todo: Todo) {
 }
 
 export async function deleteTodo(id: number) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase.from("todos").delete().eq("id", id);
 
@@ -62,7 +62,7 @@ export async function deleteTodo(id: number) {
 }
 
 export async function deleteCompletedTodos() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase
     .from("todos")
@@ -77,7 +77,7 @@ export async function deleteCompletedTodos() {
 }
 
 export async function deleteAllTodos() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -96,7 +96,7 @@ export async function deleteAllTodos() {
 }
 
 export async function onCheckChange(todo: Todo) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase
     .from("todos")
