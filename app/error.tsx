@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { SVGProps } from "react";
 
 export default function Error({
   error,
@@ -41,7 +42,7 @@ export default function Error({
   );
 }
 
-function AlertCircleIcon(props: any) {
+function AlertCircleIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

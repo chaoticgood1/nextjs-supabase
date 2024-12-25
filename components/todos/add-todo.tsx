@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { SVGProps, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { addTodo } from "@/actions/todos/actions";
@@ -31,7 +31,7 @@ export default function AddTodo() {
   );
 }
 
-function PlusIcon(props: any) {
+function PlusIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
